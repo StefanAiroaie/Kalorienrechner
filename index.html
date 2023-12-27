@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Kalorienrechner</title>
+</head>
+
+<body>
+  <section>
+    <h3>Kalorienrechner</h3>
+    <form onsubmit="calculate(); return false">
+      <!-- <label for="geschlecht">Geschlecht</label> -->
+      <div id="displayFlex">
+        <input type="radio" name="geschlecht" id="geschlechtMann">
+        <label for="geschlechtMann">Männer</label>
+        <input type="radio" name="geschlecht" id="geschlechtFrau">
+        <label for="geschlechtFrau">Frau</label>
+      </div>
+      <label for="gewicht">Gewicht in Kilogramm</label>
+      <input type="number" id="gewicht" name="gewicht">
+      <label for="kGrosse">Körpergröße in cm</label>
+      <input type="number" id="kGrosse" name="kGrosse">
+      <label for="alter">Wie alt bist du</label>
+      <input type="number" id="alter" name="alter">
+      <label for="palWert">Welche ist dein Physical Activity Level</label>
+      <select name="palWert" id="palWertOptions">
+        <option value="palW1">Sitzend</option>
+        <option value="palW2">Leicht aktiv</option>
+        <option value="palW3">Mäßig aktiv</option>
+        <option value="palW4">Sehr aktiv</option>
+        <option value="palW5">Sehr stark aktiv</option>
+      </select>
+      <input type="submit" value="Berechne">
+      <p id="result"></p>
+    </form>
+
+  </section>
+
+
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
