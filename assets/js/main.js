@@ -17,27 +17,29 @@ function calculate() {
     let result = document.querySelector('#result')
     let Kalorienbedarf
     let errorMessage = document.querySelector("#errorMessage")
-
-    // fur mich zu prufen ob alle functiniert
-    console.log("gewicht" + gewicht);
-    console.log("kGrosse" + kGrosse);
-    console.log("mann" + mann);
-    console.log("frau" + frau);
-    console.log("alter" + alter);
     let bmrWert
 
+    // fur mich zu prufen ob alle functiniert
+    // console.log("gewicht" + gewicht);
+    // console.log("kGrosse" + kGrosse);
+    // console.log("mann" + mann);
+    // console.log("frau" + frau);
+    // console.log("alter" + alter);
+
+    // erste abfrage ob mann oder frau und die enstehende formula
     if (mann == true) {
         bmrWert = 66 + (13.7 * gewicht) + (5 * kGrosse) - (6.8 * alter)
-        console.log(bmrWert);
+
     }
     else if (frau == true) {
         bmrWert = 665 + (9.6 * gewicht) + (1.8 * kGrosse) - (4.7 * alter)
-        console.log(bmrWert);
+
     }
     else {
-        errorMessage.innerHTML = "bitte selectiere dein geschlecht"
+        errorMessage.innerHTML = "ERROR - bitte selectiere dein geschlecht"
     }
 
+    // jede case hat andere wer zu multiplizieren
     switch (palWert) {
         case 'palW1':
             Kalorienbedarf = bmrWert * 1.2
@@ -58,9 +60,22 @@ function calculate() {
             break
 
     }
-    console.log(result);
-    console.log(Kalorienbedarf);
-    result.innerHTML = "Dein Kalorienbedarf nach Harris-Benedict-Formel ist " + Math.round(Kalorienbedarf) + " kcal pro Tag"
+
+    // abfrage zu kleren ob werte gegen wurden oder die richtige antwort
+
+    if (gewicht == "" && kGrosse == "" && mann == false && frau == false) {
+        errorMessage.innerHTML += "</br> ERROR - bitte werte eingeben"
+
+    }
+    else if (gewicht == "" || kGrosse == "" || alter == "") {
+        errorMessage.innerHTML = ""
+        errorMessage.innerHTML += "ERROR - bitte alle werte eingeben"
+    }
+
+    else {
+        errorMessage.innerHTML = ""
+        result.innerHTML = "Dein Kalorienbedarf nach Harris-Benedict-Formel ist " + Math.round(Kalorienbedarf) + " kcal pro Tag"
+    }
 
 }
 

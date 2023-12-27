@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/Lato-Regular.ttf");
+}
+
+html {
+    font-family: Lato;
+
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -24,4 +34,29 @@ form {
     width: 250px;
     text-align: center;
     padding: 2rem;
+}
+
+#displayFlex {
+    display: flex;
+    gap: 15px;
+}
+
+input[type="submit"] {
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+input {
+    border: 1px solid black;
+    padding: 0.2rem;
+    width: 100%;
 }
